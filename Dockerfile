@@ -25,4 +25,4 @@ RUN go build -v -o bot ./cmd/bot
 #RUN adduser -D botuser
 #USER botuser
 
-CMD ["bot"]
+CMD ["./bot"]
