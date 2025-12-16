@@ -1,27 +1,28 @@
 #build stage
-FROM golang:alpine AS builder
+#golang:alpine AS builder
+FROM golang:1.25
 
-WORKDIR /go/src/github.com/alishcodes/go-discord-bot
+WORKDIR /usr/src/app
 
 # Install git in case dependencies need it
-RUN apk add --no-cache git
+# RUN apk add --no-cache git
 
 COPY go.mod go.sum ./
 
 RUN go mod download
 
-COPY . /go/src/github.com/alishcodes/go-discord-bot
+COPY . .
 
-RUN go build -o bot ./cmd/bot
+RUN go build -v -o bot ./cmd/bot
 
 #final stage
-FROM alpine:latest
+#FROM alpine:latest
 
-WORKDIR /app
+#WORKDIR /app
 
-COPY --from=builder /go/src/github.com/alishcodes/go-discord-bot/bot .
+#COPY --from=builder /go/src/github.com/alishcodes/go-discord-bot/bot .
 
-RUN adduser -D botuser
-USER botuser
+#RUN adduser -D botuser
+#USER botuser
 
-CMD ["./bot"]
+CMD ["bot"]
