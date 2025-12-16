@@ -7,9 +7,9 @@ import (
 	"os/signal"
 	"syscall"
 
+	"github.com/alishcodes/go-discord-bot/internal/aliceapi"
 	"github.com/alishcodes/go-discord-bot/internal/bot"
 	"github.com/alishcodes/go-discord-bot/internal/config"
-	"github.com/alishcodes/go-discord-bot/pkg/aliceapi"
 	"github.com/bwmarrin/discordgo"
 	"github.com/joho/godotenv"
 )

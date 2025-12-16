@@ -1,7 +1,7 @@
 package bot
 
 import (
-	"github.com/alishcodes/go-discord-bot/pkg/aliceapi"
+	"github.com/alishcodes/go-discord-bot/internal/aliceapi"
 	"github.com/bwmarrin/discordgo"
 )
 
