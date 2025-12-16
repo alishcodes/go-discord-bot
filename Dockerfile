@@ -10,7 +10,7 @@ COPY go.mod go.sum ./
 
 RUN go mod download
 
-COPY . .
+COPY . /go/src/github.com/alishcodes/go-discord-bot
 
 RUN go build -o bot ./cmd/bot
 
