@@ -14,9 +14,10 @@ func (b *Bot) RegisterHandlers() {
 }
 
 func (b *Bot) onMessage(s *discordgo.Session, m *discordgo.MessageCreate) {
-	if m.Author.Bot {
-		return
-	}
+	// Prevent bot from responding to other bots
+	// if m.Author.Bot {
+	// 	return
+	// }
 
 	if m.Author.ID == s.State.SessionID {
 		return
