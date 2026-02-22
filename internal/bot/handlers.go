@@ -48,7 +48,7 @@ func (b *Bot) onMessage(s *discordgo.Session, m *discordgo.MessageCreate) {
 
 		// Format prompt for Alice api
 		prompt := fmt.Sprintf(
-			"Current speaker: %s. Message: %s",
+			"Message from %s: %s",
 			m.Author.DisplayName(),
 			m.Content,
 		)
