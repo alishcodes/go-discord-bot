@@ -19,7 +19,8 @@ func (b *Bot) onMessage(s *discordgo.Session, m *discordgo.MessageCreate) {
 	// 	return
 	// }
 
-	if m.Author.ID == s.State.SessionID {
+	// Prevent bot from responding to self
+	if m.Author.ID == s.State.User.ID {
 		return
 	}
 
@@ -49,7 +50,7 @@ func (b *Bot) onMessage(s *discordgo.Session, m *discordgo.MessageCreate) {
 		// Format prompt for Alice api
 		prompt := fmt.Sprintf(
 			"Message from %s: %s",
-			m.Author.DisplayName(),
+			m.Author.Username,
 			m.Content,
 		)
 
